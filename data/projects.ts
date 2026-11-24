@@ -78,7 +78,12 @@ export type Project = {
     label: string;
     url: string;
   }[];
-  evidence: string[];
+  evidence: {
+    title: string;
+    description: string;
+    type: "image" | "document" | "notebook";
+    url: string;
+  }[];
 };
 export const projects: Project[] = [
   {
@@ -142,10 +147,36 @@ export const projects: Project[] = [
         },
     ],
     evidence: [
-      "Mapa territorial de ATM",
-      "Gráficos exploratorios",
-      "Comparación de modelos",
-      "Notebook de procesamiento",
+      {
+        title: "Banco Agrícola ATM Distribution",
+        description: "Geographic distribution of Banco Agrícola ATMs in El Salvador.",
+        type: "image",
+        url: "/projects/hotspots/ATM_BancoAgrícola_SV.png",
+      },
+      {
+        title: "FEDECRÉDITO ATM Distribution",
+        description: "Geographic distribution of FEDECRÉDITO ATMs.",
+        type: "image",
+        url: "/projects/hotspots/atm_fedecredito_sv.png",
+      },
+      {
+        title: "Final Clustering Results",
+        description: "Geographic clusters identified through the analysis.",
+        type: "image",
+        url: "/projects/hotspots/final-clusters.png",
+      },
+      {
+        title: "Population Analysis",
+        description: "Exploratory analysis of population characteristics.",
+        type: "image",
+        url: "/projects/hotspots/population-analysis.png",
+      },
+      {
+        title: "Variable Correlation",
+        description: "Relationships between the variables used in the analysis.",
+        type: "image",
+        url: "/projects/hotspots/variable-corelation.png",
+      },
     ],
   },
 
@@ -201,10 +232,24 @@ export const projects: Project[] = [
         },              
     ],
     evidence: [
-      "Matriz de evaluación",
-      "Visualización PCA",
-      "Análisis por K",
-      "Notebook",
+      {
+        title: "Neuronal Activation Analysis",
+        description: "Analysis of activation functions in neural networks.",
+        type: "image",
+        url: "/projects/ai-challenge/neuronal-activation-analysis.png",
+      },
+      {
+        title: "Training and Validation Analysis",
+        description: "Comparison of training and validation performance.",
+        type: "image",
+        url: "/projects/ai-challenge/validation&train-analysis.png",
+      },
+      {
+        title: "CNN Vision Models",
+        description: "Analysis of convolutional neural network models.",
+        type: "image",
+        url: "/projects/ai-challenge/vision-cnn-models-analysis.png",
+      },
     ],
   },
 
@@ -256,9 +301,36 @@ export const projects: Project[] = [
         },
     ],
     evidence: [
-      "Dispersión de datos",
-      "Recta ajustada",
-      "Evaluación del modelo",
+      {
+        title: "Logistic Regression Results",
+        description: "Results obtained from the logistic regression model.",
+        type: "image",
+        url: "/projects/regression/logical-regression-results-plot.png",
+      },
+      {
+        title: "Decision Tree Analysis",
+        description: "Visualization of the decision tree model.",
+        type: "image",
+        url: "/projects/regression/forest-decision-plot.png",
+      },
+      {
+        title: "Random Forest — First Model",
+        description: "Visualization of the first random forest experiment.",
+        type: "image",
+        url: "/projects/regression/first-random-forest-plot.png",
+      },
+      {
+        title: "Random Forest — Second Model",
+        description: "Visualization of the second random forest experiment.",
+        type: "image",
+        url: "/projects/regression/second-random-forest-plot.png",
+      },
+      {
+        title: "Model Comparison",
+        description: "Comparison of the evaluated models.",
+        type: "image",
+        url: "/projects/regression/models-comparison.png",
+      },
     ],
   },
 
@@ -295,14 +367,12 @@ export const projects: Project[] = [
       "Fortalecí la lógica, la descomposición de problemas, la recursividad y el seguimiento paso a paso de una solución.",
     accent: "forest",
     links: [
-      { label: "Código", url: "#" },
-      { label: "Evidencia", url: "#" },
+        {
+            label: "Ver repositorio en GitHub",
+            url: "https://github.com/acam2704/Maze-Python",
+        },
     ],
-    evidence: [
-      "Laberinto inicial",
-      "Ruta explorada",
-      "Solución final",
-    ],
+    evidence: [],
   },
 
   {
@@ -340,20 +410,18 @@ export const projects: Project[] = [
       "Aprendí a pensar en usuarios, estructura de datos, consistencia, automatización y cómo un sistema puede reducir tareas repetitivas.",
     accent: "mint",
     links: [
-        {
-            label: "Descargar sistema de asistencia (Excel VBA)",
-            url: "/projects/attendance/attendance-system.xlsm",
-        },
-        {
-            label: 'Visualización',
-            url: '#'
-        }
+      {
+        label: "Download Attendance System (.xlsm)",
+        url: "/projects/attendance/project.xlsm",
+      },
     ],
     evidence: [
-      "Modelo de datos",
-      "Prototipo de interfaz",
-      "Flujo de registro",
-      "Reportes",
+      {
+        title: "Attendance System Preview",
+        description: "Preview of the Excel-based attendance management system.",
+        type: "image",
+        url: "/projects/attendance/preview.png",
+      },
     ],
   },
 
@@ -393,16 +461,8 @@ export const projects: Project[] = [
             label: "Ver repositorio en GitHub",
             url: "https://github.com/acam2704/Maze-Python",
         },
-        {
-            label: 'Visualización',
-            url: '#'
-        }
     ],
-    evidence: [
-      "Diseño conceptual",
-      "Prototipo",
-      "Prueba",
-    ],
+    evidence: [],
   },
 
   {
@@ -442,11 +502,7 @@ export const projects: Project[] = [
             url: "https://github.com/acam2704/Projects",
         },
     ],
-    evidence: [
-      "Pantallas",
-      "Flujo de usuario",
-      "Propuesta",
-    ],
+    evidence: [],
   },
   {
     slug: "power-bi-dashboard",
@@ -491,16 +547,18 @@ export const projects: Project[] = [
 
     links: [
       {
-        label: "Download Power BI dashboard (.pbix)",
-        url: "/projects/power-bi/dashboard.pbix",
+        label: "Download Power BI Dashboard (.pbix)",
+        url: "/projects/powerBI/project.pbix",
       },
     ],
 
     evidence: [
-      "Interactive Power BI dashboard",
-      "Data model",
-      "DAX measures",
-      "Dashboard visualizations",
+      {
+        title: "Power BI Dashboard Preview",
+        description: "Preview of the interactive Power BI dashboard.",
+        type: "image",
+        url: "/projects/powerBI/preview.png",
+      },
     ],
   }
 ];
