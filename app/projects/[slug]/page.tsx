@@ -102,17 +102,30 @@ export default async function ProjectPage({
               <h2>Evidence & documentation</h2>
 
               <div className="evidence-box">
-                <p>
-                  Replace these placeholders with real project
-                  screenshots, notebooks, source files, plots
-                  and documentation before submitting.
-                </p>
-
-                <ul>
+                <div className="project-evidence">
                   {p.evidence.map((e) => (
-                    <li key={e}>{e}</li>
+                    <article key={e.url} className="evidence-item">
+                      <h3>{e.title}</h3>
+                      <p>{e.description}</p>
+
+                      {e.type === "image" && (
+                        <a href={e.url} target="_blank" rel="noopener noreferrer">
+                          <img
+                            src={e.url}
+                            alt={e.title}
+                            className="evidence-image"
+                          />
+                        </a>
+                      )}
+
+                      {e.type !== "image" && (
+                        <a href={e.url} target="_blank" rel="noopener noreferrer">
+                          View evidence <ArrowUpRight size={14} />
+                        </a>
+                      )}
+                    </article>
                   ))}
-                </ul>
+                </div>
               </div>
             </section>
           </div>
